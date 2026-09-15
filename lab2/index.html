@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погода и Todo-лист</title>
+    <link rel="stylesheet" href="nullstyles.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <!-- СЕКЦИЯ ПОГОДЫ -->
+      <section class="weather-section">
+        <h2>Прогноз погоды</h2>
+
+        <!-- Блок времени и обновления -->
+        <div class="time-control">
+          <span id="last-request-time">Запрос еще не выполнялся</span>
+          <button id="update-btn" class="hidden">🔄 Обновить</button>
+        </div>
+
+        <!-- Форма поиска -->
+        <form id="weather-form" class="search-form">
+          <input
+            type="text"
+            id="city-input"
+            placeholder="Введите город (например, Москва)"
+            required
+          />
+          <button type="submit">Получить погоду</button>
+        </form>
+
+        <!-- История запросов -->
+        <div class="history-section">
+          <p>История поиска:</p>
+          <ul id="history-list" class="history-list"></ul>
+        </div>
+
+        <!-- Лоадер -->
+        <div id="loader" class="loader hidden"></div>
+
+        <h3 id="current-city-title" class="city-title hidden"></h3>
+        <!-- Результаты погоды -->
+        <div id="weather-results" class="weather-results"></div>
+      </section>
+
+      <!-- СЕКЦИЯ TODO (пока заглушка) -->
+      <!-- СЕКЦИЯ TODO -->
+      <section class="todo-section">
+        <h2>Todo-лист</h2>
+
+        <!-- Форма добавления задачи -->
+        <form id="todo-form" class="todo-form">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Введите новую задачу..."
+            required
+          />
+          <button type="submit">Добавить</button>
+        </form>
+
+        <!-- Поиск -->
+        <div class="search-container">
+          <input type="text" id="todo-search" placeholder="🔍 Поиск задач..." />
+        </div>
+
+        <!-- Список задач -->
+        <ul id="todo-list" class="todo-list"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
